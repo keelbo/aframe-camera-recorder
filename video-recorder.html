@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Record WebGL to WebM (Chrome only)</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" charset="utf-8" />
+  </head>
+  <body>
+    <div class="buttons">
+      <button id="start">Start recording to WebM</button>
+      <button id="stop">Stop (or wait 4 seconds)</button>
+    </div>
+
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="thirdparty/CCapture.all.min.js"></script>
+    <script src="c-camera-recorder.js"></script>
+
+    <a-scene>
+      <a-sky src="bg.jpg">
+        <a-animation
+          attribute="rotation"
+          dur="120000"
+          fill="forwards"
+          to="0 360 0"
+          repeat="indefinite"
+          easing="linear"
+        ></a-animation>
+      </a-sky>
+    </a-scene>
+
+    <script src="video-recorder.js"></script>
+  </body>
+</html>

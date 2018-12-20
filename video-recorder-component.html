@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Record WebGL to WebM (Chrome only)</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" charset="utf-8" />
+  </head>
+  <body>
+    <!--
+      <div class="buttons">
+        <button id="start">Start recording to WebM</button>
+        <button id="stop">Stop (or wait 4 seconds)</button>
+      </div>
+    -->
+
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="thirdparty/CCapture.all.min.js"></script>
+    <script src="c-camera-recorder.js"></script>
+    <script src="./aframe-animation-component.js"></script>
+    <script src="./c-aspect-ration-resizer.js"></script>
+
+    <a-scene c-camera-recorder="">
+      <a-assets>
+        <video
+          id="vid"
+          autoplay
+          loop="true"
+          src="./e551bead-acd7-8fe4-03a7-24505e560797/test.mp4"
+        ></video>
+      </a-assets>
+
+      <!--
+        <a-video
+          src="./e551bead-acd7-8fe4-03a7-24505e560797/test.mp4"
+          c-aspect-ration-resizer=""
+        ></a-video>
+      -->
+
+      <a-image src="#vid" c-aspect-ration-resizer=""></a-image>
+
+      <a-sky src="bg.jpg">
+        <!--
+          animation__rotation="property:rotation; dur:120000; to:0 360 0; repeat:indefinite; easing:linear"
+        -->
+      </a-sky>
+    </a-scene>
+
+    <!-- <script src="video-recorder.js"></script> -->
+  </body>
+</html>
